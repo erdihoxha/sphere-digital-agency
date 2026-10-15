@@ -189,6 +189,87 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
 }
 
+/* ---------- About page ---------- */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+  min-height: 100vh;
+  padding: clamp(84px, 8vw, 110px) clamp(20px, 2.5vw, 40px) clamp(20px, 2.5vw, 40px);
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 740px;
+}
+
+.about__title {
+  margin: 0;
+  font-size: clamp(44px, 5.6vw, 96px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.about__dot {
+  display: inline-block;
+  width: 0.14em;
+  height: 0.14em;
+  margin-left: 0.55em;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.about__copy {
+  margin-top: clamp(32px, 5vw, 80px);
+  font-size: clamp(12px, 1vw, 15px);
+  font-weight: 500;
+  line-height: 1.45;
+  text-transform: uppercase;
+  text-align: justify;
+  color: var(--muted);
+}
+.about__copy p { margin: 0 0 1.6em; }
+
+.about__services {
+  margin-top: auto;
+  padding-top: 48px;
+  font-size: clamp(12px, 1vw, 15px);
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.45;
+}
+.about__label {
+  margin: 0 0 1.8em;
+  font: inherit;
+  color: var(--muted);
+}
+.about__services ul { list-style: none; margin: 0; padding: 0; }
+
+.about__media {
+  margin: 0;
+  position: sticky;
+  top: clamp(84px, 8vw, 110px);
+  align-self: start;
+  height: calc(100vh - clamp(84px, 8vw, 110px) - clamp(20px, 2.5vw, 40px));
+  border-radius: 18px;
+  overflow: hidden;
+  background: #1c1027;
+}
+.about__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 800px) {
+  .about { grid-template-columns: minmax(0, 1fr); }
+  .about__media { position: static; height: auto; aspect-ratio: 4 / 5; }
+}
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
@@ -340,4 +421,5 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Angular host elements ---------- */
 app-root,
 app-home { display: block; height: 100%; }
-app-work { display: block; }
+app-work,
+app-about { display: block; }

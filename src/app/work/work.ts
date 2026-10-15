@@ -8,12 +8,12 @@ interface Project {
 
 /** Dummy projects. Swap the names, tags and images (public/images) for real ones. */
 const PROJECTS: Project[] = [
-  { title: 'Orbit Coffee', tags: 'Branding | Packaging', image: 'images/01.svg' },
-  { title: 'Halo Skincare', tags: 'Creative direction | Production', image: 'images/02.svg' },
-  { title: 'Northbound Fitness', tags: 'Web development | Social media', image: 'images/03.svg' },
-  { title: 'Verde Market', tags: 'Branding | Web development', image: 'images/04.svg' },
-  { title: 'Pulse Festival', tags: 'Campaign | Production', image: 'images/05.svg' },
-  { title: 'Atlas Studio', tags: 'Consulting | Branding', image: 'images/06.svg' },
+  { title: 'Orbit Coffee', tags: 'Branding | Packaging', image: 'images/photo-01.jpg' },
+  { title: 'Halo Skincare', tags: 'Creative direction | Production', image: 'images/photo-02.jpg' },
+  { title: 'Northbound Fitness', tags: 'Web development | Social media', image: 'images/photo-03.jpg' },
+  { title: 'Verde Market', tags: 'Branding | Web development', image: 'images/photo-04.jpg' },
+  { title: 'Pulse Festival', tags: 'Campaign | Production', image: 'images/photo-05.jpg' },
+  { title: 'Atlas Studio', tags: 'Consulting | Branding', image: 'images/photo-06.jpg' },
 ];
 
 @Component({

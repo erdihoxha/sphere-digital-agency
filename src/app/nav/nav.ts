@@ -12,7 +12,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       </a>
       <nav class="nav__links" aria-label="Primary">
         <a routerLink="/work" routerLinkActive="is-active" ariaCurrentWhenActive="page">Work</a>
-        <a routerLink="/" fragment="about">About</a>
+        <a routerLink="/about" routerLinkActive="is-active" ariaCurrentWhenActive="page">About</a>
         <a routerLink="/" fragment="contact">Contact</a>
       </nav>
       <span class="nav__year">&reg;2026</span>
