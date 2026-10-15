@@ -12,14 +12,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-home">
   <header class="nav">
     <a class="nav__brand" href="#top">
       <img class="nav__logo" src="images/logo.svg" alt="" width="26" height="26">
       <span>SPHERE Digital Agency</span>
     </a>
     <nav class="nav__links" aria-label="Primary">
-      <a href="#work">Work</a>
+      <a href="work.html">Work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -39,8 +39,14 @@
   </main>
 
   <div id="trail" class="trail" aria-hidden="true"></div>
-  <div id="dot" class="dot" aria-hidden="true"></div>
+  <div id="cursor" class="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+    </span>
+  </div>
 
+  <script src="cursor.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

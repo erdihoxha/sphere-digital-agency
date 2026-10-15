@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Work | SPHERE Digital Agency</title>
+  <meta name="description" content="Selected work from SPHERE Digital Agency.">
+  <meta name="theme-color" content="#12071c">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="nav__brand" href="index.html">
+      <img class="nav__logo" src="images/logo.svg" alt="" width="26" height="26">
+      <span>SPHERE Digital Agency</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="nav__year">&reg;2026</span>
+  </header>
+
+  <main class="work">
+    <section class="work__intro">
+      <h1 class="work__title">Selected work</h1>
+      <p class="work__sub">A few projects we&rsquo;re proud of</p>
+    </section>
+
+    <!-- Dummy projects. Swap the images in images/ and the names below for real ones. -->
+    <ul class="grid">
+      <li>
+        <a class="card" href="#" data-cursor="view">
+          <div class="card__media"><img src="images/01.svg" alt="" loading="lazy"></div>
+          <h2 class="card__title">Orbit Coffee</h2>
+          <p class="card__meta">Branding | Packaging</p>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="#" data-cursor="view">
+          <div class="card__media"><img src="images/02.svg" alt="" loading="lazy"></div>
+          <h2 class="card__title">Halo Skincare</h2>
+          <p class="card__meta">Creative direction | Production</p>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="#" data-cursor="view">
+          <div class="card__media"><img src="images/03.svg" alt="" loading="lazy"></div>
+          <h2 class="card__title">Northbound Fitness</h2>
+          <p class="card__meta">Web development | Social media</p>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="#" data-cursor="view">
+          <div class="card__media"><img src="images/04.svg" alt="" loading="lazy"></div>
+          <h2 class="card__title">Verde Market</h2>
+          <p class="card__meta">Branding | Web development</p>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="#" data-cursor="view">
+          <div class="card__media"><img src="images/05.svg" alt="" loading="lazy"></div>
+          <h2 class="card__title">Pulse Festival</h2>
+          <p class="card__meta">Campaign | Production</p>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="#" data-cursor="view">
+          <div class="card__media"><img src="images/06.svg" alt="" loading="lazy"></div>
+          <h2 class="card__title">Atlas Studio</h2>
+          <p class="card__meta">Consulting | Branding</p>
+        </a>
+      </li>
+    </ul>
+
+    <footer class="foot">
+      <span>2026&reg;</span>
+      <span>SPHERE Digital Agency. All rights reserved.</span>
+    </footer>
+  </main>
+
+  <div id="cursor" class="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+    </span>
+  </div>
+
+  <script src="cursor.js"></script>
+</body>
+</html>

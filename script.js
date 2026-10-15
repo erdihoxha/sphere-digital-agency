@@ -23,13 +23,11 @@
     popMs: 380,
     holdMs: 650,
     fadeMs: 700,
-    maxLive: 28,
-    dotEase: 0.2
+    maxLive: 28
   };
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var trail = document.getElementById("trail");
-  var dot = document.getElementById("dot");
 
   // Preload so the first drops are not blank.
   IMAGES.forEach(function (src) { var im = new Image(); im.src = src; });
@@ -39,8 +37,6 @@
   var live = 0;
   var last = null;      // position of the last drop
   var pos = { x: 0, y: 0 };
-  var dotPos = { x: 0, y: 0 };
-  var dotReady = false;
 
   function dims() {
     var vw = window.innerWidth;
@@ -105,13 +101,6 @@
     pos.x = e.clientX;
     pos.y = e.clientY;
 
-    if (!dotReady) {
-      dotPos.x = pos.x;
-      dotPos.y = pos.y;
-      dotReady = true;
-      dot.classList.add("is-on");
-    }
-
     if (!last) {
       last = { x: pos.x, y: pos.y };
       return;
@@ -135,21 +124,9 @@
     }
   }
 
-  function tick() {
-    var k = reduceMotion ? 1 : SETTINGS.dotEase;
-    dotPos.x += (pos.x - dotPos.x) * k;
-    dotPos.y += (pos.y - dotPos.y) * k;
-    dot.style.transform = "translate(" + dotPos.x + "px," + dotPos.y + "px)";
-    requestAnimationFrame(tick);
-  }
-
   window.addEventListener("pointermove", onMove, { passive: true });
   window.addEventListener("pointerdown", onMove, { passive: true });
   document.addEventListener("pointerleave", function () {
-    dot.classList.remove("is-on");
-    dotReady = false;
     last = null;
   });
-
-  tick();
 })();
