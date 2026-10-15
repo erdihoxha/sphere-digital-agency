@@ -1,0 +1,200 @@
+/* SPHERE Digital Agency
+   Layout: one dark screen. Heavy wordmark centered, thin tracked subline locked to its width,
+   nav on the top edge, tagline on the bottom edge. Photos trail the cursor above everything. */
+
+:root {
+  /* Brand colours from the SPHERE logo: purple #662d91, orange #f7941d, white. */
+  --bg: #12071c;           /* purple #662d91 taken down to a near-black ground */
+  --fg: #ffffff;
+  --muted: #a58fbb;
+  --accent: #f7941d;       /* wordmark and hover */
+  --brand-purple: #662d91;
+
+  --font: "Montserrat", "Gotham", "Helvetica Neue", Arial, sans-serif;
+
+  --gutter: max(20px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(20px, env(safe-area-inset-right, 0px));
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  touch-action: none;
+  position: relative;
+}
+
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding-block: max(20px, env(safe-area-inset-top, 0px));
+  padding-left: var(--gutter);
+  padding-right: var(--gutter-r);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nav__brand {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+.nav__logo {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+}
+.nav__year  { justify-self: end; font-weight: 300; }
+
+.nav__links { display: flex; gap: 20px; }
+
+.nav a {
+  font-variation-settings: "wght" 400;
+  transition: font-weight 0.25s ease, color 0.25s ease;
+}
+.nav__links a { font-weight: 300; }
+.nav__links a:hover { font-weight: 800; color: var(--accent); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding-inline: var(--gutter) var(--gutter-r);
+}
+
+.mark {
+  margin: 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  color: var(--accent);
+}
+
+.mark__word {
+  font-size: clamp(64px, 17vw, 300px);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.035em;
+  /* pull the trailing tracking back so the subline aligns with the last letter */
+  margin-right: 0.035em;
+}
+
+.mark__sub {
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+  margin-top: clamp(12px, 1.6vw, 28px);
+  font-size: clamp(11px, 1.9vw, 34px);
+  font-weight: 200;
+  line-height: 1;
+  color: var(--fg);
+}
+
+.mark__letters {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 0;
+}
+.mark__letters i { font-style: normal; }
+
+.tagline {
+  position: fixed;
+  z-index: 1;
+  inset: auto 0 0 0;
+  margin: 0;
+  padding-block: max(28px, env(safe-area-inset-bottom, 0px));
+  padding-inline: var(--gutter) var(--gutter-r);
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+/* ---------- Trail and cursor ---------- */
+.trail {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.trail__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
+  pointer-events: none;
+  will-change: transform, opacity;
+  user-select: none;
+}
+
+.dot {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--fg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+.dot.is-on { opacity: 1; }
+
+@media (hover: none), (pointer: coarse) {
+  .dot { display: none; }
+}
+
+/* ---------- Narrow screens ---------- */
+@media (max-width: 640px) {
+  .nav {
+    grid-template-columns: 1fr auto;
+    row-gap: 14px;
+  }
+  .nav__links { grid-column: 1 / -1; grid-row: 2; gap: 18px; }
+  .nav__brand { font-size: 11px; }
+  .tagline { font-size: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav a { transition: none; }
+}
