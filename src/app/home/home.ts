@@ -7,7 +7,7 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, inject, viewChild } fr
  * Each image pops in, holds briefly, then fades out and removes itself.
  * To use your own photos, replace the files in public/images and update IMAGES.
  */
-const IMAGES = Array.from({ length: 18 }, (_, i) => `images/photo-${String(i + 1).padStart(2, '0')}.jpg`);
+const IMAGES = Array.from({ length: 46 }, (_, i) => `images/photo-${String(i + 1).padStart(2, '0')}.jpg`);
 
 const SETTINGS = {
   spacing: 0.1, // distance between drops, as a fraction of viewport width

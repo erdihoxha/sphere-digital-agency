@@ -9,11 +9,11 @@ interface Project {
 /** Dummy projects. Swap the names, tags and images (public/images) for real ones. */
 const PROJECTS: Project[] = [
   { title: 'Orbit Coffee', tags: 'Branding | Packaging', image: 'images/photo-01.jpg' },
-  { title: 'Halo Skincare', tags: 'Creative direction | Production', image: 'images/photo-02.jpg' },
-  { title: 'Northbound Fitness', tags: 'Web development | Social media', image: 'images/photo-03.jpg' },
-  { title: 'Verde Market', tags: 'Branding | Web development', image: 'images/photo-04.jpg' },
-  { title: 'Pulse Festival', tags: 'Campaign | Production', image: 'images/photo-05.jpg' },
-  { title: 'Atlas Studio', tags: 'Consulting | Branding', image: 'images/photo-06.jpg' },
+  { title: 'Halo Skincare', tags: 'Creative direction | Production', image: 'images/photo-09.jpg' },
+  { title: 'Northbound Fitness', tags: 'Web development | Social media', image: 'images/photo-17.jpg' },
+  { title: 'Verde Market', tags: 'Branding | Web development', image: 'images/photo-25.jpg' },
+  { title: 'Pulse Festival', tags: 'Campaign | Production', image: 'images/photo-33.jpg' },
+  { title: 'Atlas Studio', tags: 'Consulting | Branding', image: 'images/photo-41.jpg' },
 ];
 
 @Component({
