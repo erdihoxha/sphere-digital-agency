@@ -1,26 +1,32 @@
 # SPHERE Digital Agency
 
-Landing page with a cursor image trail, plus a Work page with a minimal card grid. Plain HTML, CSS and JavaScript, no build step.
+Landing page with a cursor image trail, plus a Work page with a minimal card grid.
+Built with Angular (standalone components, router, no extra libraries).
 
 ## Run it
 
-Open `index.html` in a browser, or serve the folder:
+You need Node.js 22.12 or newer (or 24) and npm.
 
 ```
-npx serve .
+npm install
+npm start
 ```
 
-## Customise
+Then open http://localhost:4200. The page reloads when you save a file.
 
-- **Photos:** replace the files in `images/` and update the `IMAGES` list at the top of `script.js`.
-  Portrait crops around 400x500 work best. The `.svg` files are placeholders.
-- **Trail feel:** spacing, size, tilt and timing are in the `SETTINGS` object in `script.js`.
-- **Colour and type:** tokens are at the top of `styles.css`. The typeface is Montserrat,
+Other commands:
+
+```
+npm run build   # production build into dist/
+```
+
+## Where things are
+
+- `src/app/home/home.ts`: hero and the cursor image trail. Spacing, size, tilt and timing are in `SETTINGS` at the top.
+- `src/app/work/work.ts`: the project cards. Edit the `PROJECTS` list (name, tags, image).
+- `src/app/cursor/cursor.ts`: the dot that turns into a ring with an arrow over anything marked `data-cursor="view"`.
+- `src/app/nav/nav.ts`: the top navigation.
+- `src/styles.css`: all styling. Colour and type tokens are at the top. The typeface is Montserrat,
   loaded from Google Fonts at weights 100 to 900.
-
-## Pages
-
-- `index.html`: hero with the cursor image trail.
-- `work.html`: project cards. Edit the dummy projects (name, tags, image) directly in the HTML.
-  Anything marked `data-cursor="view"` turns the cursor into a ring with an arrow.
-- `cursor.js` is shared by both pages. `script.js` is the home page trail only.
+- `public/images/`: the logo and the placeholder photos. Replace the `.svg` placeholders with real
+  photos and update the file names in `home.ts` and `work.ts`.
