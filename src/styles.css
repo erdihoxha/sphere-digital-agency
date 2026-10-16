@@ -4,7 +4,7 @@
 
 :root {
   /* Brand colours from the SPHERE logo: purple #662d91, orange #f7941d, white. */
-  --bg: #12071c;           /* purple #662d91 taken down to a near-black ground */
+  --bg: #0c0222;           /* purple #662d91 taken down to a near-black ground */
   --fg: #ffffff;
   --muted: #a58fbb;
   --accent: #f7941d;       /* wordmark and hover */
@@ -24,7 +24,17 @@ html, body {
 }
 
 body {
-  background: var(--bg);
+  /* Deep purple ground with a violet-to-magenta-to-orange glow rising from the bottom left. */
+  background-color: #050109;
+  background-image:
+    radial-gradient(ellipse 55% 38% at 0% 90%, rgba(255, 112, 40, 0.85) 0%, rgba(240, 50, 90, 0.55) 35%, rgba(240, 50, 90, 0) 100%),
+    radial-gradient(ellipse 70% 45% at 22% 100%, rgba(214, 36, 150, 0.8) 0%, rgba(214, 36, 150, 0) 100%),
+    radial-gradient(ellipse 75% 55% at 62% 88%, rgba(130, 20, 235, 0.9) 0%, rgba(110, 20, 200, 0.45) 45%, rgba(110, 20, 200, 0) 100%),
+    radial-gradient(ellipse 120% 70% at 75% 70%, rgba(55, 10, 120, 0.8) 0%, rgba(55, 10, 120, 0) 100%),
+    linear-gradient(to bottom, #040008 0%, #0c0222 45%, #1b0640 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--fg);
   font-family: var(--font);
   font-weight: 400;
@@ -98,7 +108,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   inset: 0 0 -28px 0;
   z-index: -1;
-  background: linear-gradient(to bottom, rgba(18, 7, 28, 0.88), rgba(18, 7, 28, 0));
+  background: linear-gradient(to bottom, rgba(4, 0, 8, 0.8), rgba(4, 0, 8, 0));
   pointer-events: none;
 }
 
