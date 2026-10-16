@@ -17,10 +17,10 @@ const SERVICES = [
       <section class="about__text">
         <h1 class="about__title">
           Hello there<span class="about__dot" aria-hidden="true"></span><br />
-          we&rsquo;re Sphere
+          we&rsquo;re <span class="about__accent">Sphere</span>
         </h1>
 
-        <div class="about__copy">
+        <div class="serif about__copy">
           <p>
             SPHERE is a digital agency built around creators. Our work blends culture, fashion,
             music and lifestyle into stories that feel current and honest.
@@ -33,7 +33,7 @@ const SERVICES = [
         </div>
 
         <div class="about__services">
-          <h2 class="about__label">Services</h2>
+          <h2 class="pill about__label">Services</h2>
           <ul>
             @for (service of services; track service) {
               <li>{{ service }}</li>
